@@ -14,6 +14,40 @@ const HeaderContent = styled("div")`
     display: flex;
     justify-content: space-between;
 `
+const HeaderLogo = styled("div")`
+    a {
+        color: currentColor;
+        border-bottom: 3px solid transparent;
+        font-weight: 600;
+        font-size: 0.95em;
+        height: 100%;
+        padding-bottom: 1.25em;
+        display: block;
+        position: relative;
+    
+        &:after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            width: 18px;
+            height: 3px;
+            background: transparent;
+            bottom: -3px;
+            right: 50%;
+            margin-right: -9px;
+            transition: 100ms ease-in-out background;
+        }
+
+        &:hover {
+            &:after {
+                background: ${colors.blue500};
+                transition: 100ms ease-in-out background;
+            }
+        }
+
+    }
+    
+`
 
 const HeaderLinks = styled("div")`
     display: grid;
@@ -39,7 +73,7 @@ const HeaderLinks = styled("div")`
         font-size: 0.95em;
         height: 100%;
         padding-bottom: 1.25em;
-        padding-top: 0.25em;
+        padding-top: 0.5em;
         display: block;
         position: relative;
 
@@ -65,7 +99,8 @@ const HeaderLinks = styled("div")`
 
         &.Link--is-active {
             &:after {
-                background: ${colors.blue500};
+                background: ${colors.orange500};
+                
                 transition: 100ms ease-in-out background;
             }
         }
@@ -75,9 +110,11 @@ const HeaderLinks = styled("div")`
 const Header = () => (
     <HeaderContainer>
         <HeaderContent>
-            <Link to="/">
-                <Logo/>
-            </Link>
+            <HeaderLogo>
+                <Link to="/">
+                    <Logo/>
+                </Link>
+            </HeaderLogo>
             <HeaderLinks>
                 <Link
                     activeClassName="Link--is-active"

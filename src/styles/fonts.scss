@@ -1,11 +1,19 @@
 @import url('https://rsms.me/inter/inter.css');
-
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poiret+One&family=Rubik:ital,wght@0,300;0,400;1,300;1,400&family=Space+Mono:wght@400;700&display=swap');
 html {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Rubik', sans-serif;
+}
+
+html h1 {
+    font-family: 'Rubik', sans-serif;
+}
+
+html h2, h3, h4, h5, h6 {
+    font-family: 'Space Mono', sans-serif;
 }
 
 @supports (font-variation-settings: normal) {
     html {
-        font-family: 'Inter var', sans-serif;
+        font-family: 'Rubik', sans-serif;
     }
 }

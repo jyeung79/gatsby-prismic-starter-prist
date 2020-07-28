@@ -13,7 +13,7 @@ import ProjectCard from "components/ProjectCard";
 
 const Hero = styled("div")`
     padding-top: 2.5em;
-    padding-bottom: 3em;
+    padding-bottom: 2.5em;
     margin-bottom: 6em;
     max-width: 830px;
 
@@ -22,8 +22,13 @@ const Hero = styled("div")`
     }
 
     h1 {
-        margin-bottom: 1em;
+        font-size: 96px;
+        font-weight: 700;
+    }
 
+    h2 {
+        font-weight: 300;
+        font-size: 32px;
         a {
             text-decoration: none;
             transition: all 100ms ease-in-out;
@@ -61,6 +66,10 @@ const Section = styled("div")`
     &:last-of-type {
         margin-bottom: 0;
     }
+
+    h2 {
+        font-size: 48px;
+    }
 `
 
 const WorkAction = styled(Link)`
@@ -82,7 +91,7 @@ const WorkAction = styled(Link)`
     }
 
     &:hover {
-        color: ${colors.blue500};
+        
         transition: all 150ms ease-in-out;
 
         span {
@@ -137,6 +146,9 @@ const RenderBody = ({ home, projects, meta }) => (
             <>
                 {RichText.render(home.hero_title)}
             </>
+            <h2>
+                {RichText.render(home.hero_subtitle)}
+            </h2>
             <a href={home.hero_button_link.url}
                target="_blank" rel="noopener noreferrer">
                 <Button>
@@ -145,6 +157,7 @@ const RenderBody = ({ home, projects, meta }) => (
             </a>
         </Hero>
         <Section>
+            <h1>Work</h1>
             {projects.map((project, i) => (
                 <ProjectCard
                     key={i}
@@ -197,6 +210,7 @@ export const query = graphql`
                 edges {
                     node {
                         hero_title
+                        hero_subtitle
                         hero_button_text
                         hero_button_link {
                             ... on PRISMIC__ExternalLink {
