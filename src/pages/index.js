@@ -10,6 +10,8 @@ import Button from "components/_ui/Button";
 import About from "components/About";
 import Layout from "components/Layout";
 import ProjectCard from "components/ProjectCard";
+//import {useSpring, useTrail, animated} from 'react-spring';
+import Typewriter from 'typewriter-effect';
 
 const Hero = styled("div")`
     padding-top: 2.5em;
@@ -24,9 +26,10 @@ const Hero = styled("div")`
     h1 {
         font-size: 96px;
         font-weight: 700;
+        margin: 0 0 3rem 0;
     }
 
-    h2 {
+    span {
         font-weight: 300;
         font-size: 32px;
         a {
@@ -51,6 +54,12 @@ const Hero = styled("div")`
 
             }
         }
+    }
+
+    .subtitleText {
+        font-weight: 300;
+        font-size: 32px;
+        margin: 0 0 2rem 0;
     }
 `
 
@@ -102,6 +111,7 @@ const WorkAction = styled(Link)`
     }
 `
 
+
 const RenderBody = ({ home, projects, meta }) => (
     <>
         <Helmet
@@ -146,11 +156,18 @@ const RenderBody = ({ home, projects, meta }) => (
             <>
                 {RichText.render(home.hero_title)}
             </>
-            <h2>
-                {RichText.render(home.hero_subtitle)}
-            </h2>
+            <div className="subtitleText">
+                <Typewriter
+                    onInit={( typewriter ) => {
+                        typewriter.changeDelay(60)
+                        .pauseFor(1000)
+                        .typeString(`${RichText.asText(home.hero_subtitle)}`)
+                        .start();
+                    }}
+                />
+            </div>
             <a href={home.hero_button_link.url}
-               target="_blank" rel="noopener noreferrer">
+            target="_blank" rel="noopener noreferrer">
                 <Button>
                     {RichText.render(home.hero_button_text)}
                 </Button>
