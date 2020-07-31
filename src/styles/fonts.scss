@@ -12,6 +12,10 @@ html h2, h3, h4, h5, h6 {
     font-family: 'Space Mono', sans-serif;
 }
 
+.subtitleText {
+    font-family: 'Space Mono', sans-serif;
+}
+
 @supports (font-variation-settings: normal) {
     html {
         font-family: 'Rubik', sans-serif;

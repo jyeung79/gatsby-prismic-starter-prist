@@ -9,6 +9,7 @@ import dimensions from "styles/dimensions";
 import Footer from "components/Footer";
 import Header from "components/Header";
 import 'styles/fonts.scss';
+import wave from '../images/wave.svg';
 
 const LayoutContainer = styled.div`
     max-width: ${dimensions.maxwidthDesktop}px;
@@ -49,6 +50,7 @@ const Layout = ({ children }) => (
                 <Global styles={[globalStyles, typeStyles]} />
                 <div className="Layout">
                     <Header />
+                    {/*<img src={wave} alt="Wavebar" />*/}
                     <main className="Layout__content">
                         {children}
                     </main>
