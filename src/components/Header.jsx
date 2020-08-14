@@ -51,8 +51,8 @@ const HeaderLogo = styled("div")`
 
 const HeaderLinks = styled("div")`
     display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-gap: 7em;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 6em;
     justify-content: flex-end;
     width: 100%;
     max-width: 200px;
@@ -125,6 +125,11 @@ const Header = () => (
                     activeClassName="Link--is-active"
                     to="/blog">
                     Blog
+                </Link>
+                <Link
+                    activeClassName="Link--is-active"
+                    to="/contact">
+                    About
                 </Link>
             </HeaderLinks>
         </HeaderContent>

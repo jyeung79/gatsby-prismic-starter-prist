@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import styled from "@emotion/styled";
 import colors from "styles/colors";
 import dimensions from "styles/dimensions";
+import { motion } from "framer-motion";
 
-const ButtonContainer = styled("button")`
+const ButtonContainer = styled(motion.button)`
     padding: 1em 2em;
-    background: ${colors.blue400};
+    background: white;
     font-weight: 600;
-    color: white;
+    color: ${colors.blue500};
     outline: none;
-    border: none;
     font-size: 1rem;
-    border-radius: 2px;
+    border-radius: 0.5rem;
+    border: 0.1rem solid ${colors.blue400};
     position: relative;
     transition: background 100ms ease-in-out;
 
@@ -29,26 +30,32 @@ const ButtonContainer = styled("button")`
         position: absolute;
         left: 0;
         top: 0;
+        border: 0.1rem solid 
         width: 100%;
         height: 100%;
-        background: linear-gradient(135deg, ${colors.pink400} 0%, ${colors.purple400} 100%);
+        background: white;
+        color: ${colors.blue400};
         z-index: -1;
     }
 
     &:hover {
         cursor: pointer;
-        background: transparent;
+        background: ${colors.blue200};
+        color: ${colors.blue700}
         transition: background 100ms ease-in-out;
     }
 
     &.Button--secondary {
-        background: ${colors.blue200};
-        color: ${colors.blue600};
+        background: white;
+        border: 0.1rem solid ${colors.orange400};
+        color: ${colors.orange600};
         padding: 0.95em 1.8em;
         font-size: 0.95rem;
+        transition: background 100ms ease-in-out;
 
         &:hover {
-            background: ${colors.blue300};
+            background: ${colors.orange100};
+            color: ${colors.orange300}
             transition: background 100ms ease-in-out;
         }
     }
@@ -59,6 +66,8 @@ class Button extends Component {
         const { children, ...props } = this.props;
         return (
             <ButtonContainer
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.9 }}
                 onClick={this.props.onClick}
                 {...props}>
                 {this.props.children}
