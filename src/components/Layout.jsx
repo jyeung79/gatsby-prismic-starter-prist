@@ -9,7 +9,6 @@ import dimensions from "styles/dimensions";
 import Footer from "components/Footer";
 import Header from "components/Header";
 import 'styles/fonts.scss';
-import wave from '../images/wave.svg';
 
 const LayoutContainer = styled.div`
     max-width: ${dimensions.maxwidthDesktop}px;

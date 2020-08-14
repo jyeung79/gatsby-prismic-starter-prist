@@ -3,7 +3,9 @@ import colors from 'styles/colors';
 import dimensions from 'styles/dimensions';
 
 const globalStyles = css`
-    html,
+    html {
+        overflow-y: scroll;
+    },
     body,
     #root {
         margin: 0;
