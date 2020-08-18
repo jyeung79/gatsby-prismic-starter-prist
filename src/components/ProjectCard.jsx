@@ -116,17 +116,15 @@ const ProjectCardAction = styled("div")`
 `
 
 const ProjectCardImageContainer = styled("div")`
-    background: ${colors.grey200};
+    background: ${colors.grey300};
     display: flex;
     justify-content: center;
     align-items: flex-end;
     overflow: hidden;
     position: relative;
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: 0.1em;
 
     @media(max-width:${dimensions.maxwidthTablet}px) {
-        padding-top: 3em;
         max-height: 200px;
         flex-direction: column;
         align-items: center;
@@ -147,12 +145,12 @@ const ProjectCardImageContainer = styled("div")`
     }
 
     img {
-        max-width: 400px;
         width: 100%;
+        height: 100%;
         box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.04);
 
         @media(max-width:${dimensions.maxwidthTablet}px) {
-            max-width: 300px;
+            max-width: 400px;
         }
     }
 `

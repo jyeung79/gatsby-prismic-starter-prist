@@ -11,7 +11,6 @@ import About from "components/About";
 import Layout from "components/Layout";
 import ProjectCard from "components/ProjectCard";
 import Typewriter from 'typewriter-effect';
-import { motion } from 'framer-motion';
 
 const Hero = styled("div")`
     padding-top: 2.5em;
@@ -175,16 +174,18 @@ const RenderBody = ({ home, projects, meta }) => (
         </Hero>
         <Section>
             <h1>Work</h1>
-            {projects.map((project, i) => (
-                <ProjectCard
-                    key={i}
-                    category={project.node.project_category}
-                    title={project.node.project_title}
-                    description={project.node.project_preview_description}
-                    thumbnail={project.node.project_preview_thumbnail}
-                    uid={project.node._meta.uid}
-                />
-            ))}
+            {
+                Object.entries(projects).slice(0, 3).map((project, i) => (
+                    <ProjectCard
+                        key={i}
+                        category={project[1].node.project_category}
+                        title={project[1].node.project_title}
+                        description={project[1].node.project_preview_description}
+                        thumbnail={project[1].node.project_preview_thumbnail}
+                        uid={project[1].node._meta.uid}
+                    />
+                ))
+            }
             <WorkAction to={"/work"}>
                 See more work <span>&#8594;</span>
             </WorkAction>

@@ -119,7 +119,7 @@ const Contact = ({ content, meta }) => (
             </ContactTitle>
             <>
                 <ProfileImageContainer >
-                    <img src={content.contact_image.url} alt='Profile image' />
+                    <img src={content.contact_image.url} alt='Profile' />
                     {RichText.render(content.contact_subtitle)}
                 </ProfileImageContainer>
                 <h2 >Skills & Experiences</h2>

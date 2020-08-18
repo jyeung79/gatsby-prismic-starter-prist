@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import colors from "styles/colors";
 import Logo from "components/_ui/Logo";
-import spooch from "images/oscar-icon.png"
+import spooch from "images/Doge.png"
 
 const FooterContainer = styled("div")`
     padding-top: 3.75em;
@@ -53,8 +53,8 @@ const Footer = () => (
         <Link to="/">
             <Logo />
         </Link>
-        <FooterAuthor href="https://www.marguerite.io/?utm_source=prist&utm_medium=footer&utm_campaign=prist_starter">
-            © 2019 — Designed & developed by Marguerite Roth
+        <FooterAuthor href="https://github.com/jyeung79/gatsby-prismic-starter-prist">
+            © 2020 — Designed by Jeffery Yeung. Credits to Marguerite Roth.
             <FooterSpooch className="FooterSpooch" src={spooch} />
         </FooterAuthor>
     </FooterContainer>
