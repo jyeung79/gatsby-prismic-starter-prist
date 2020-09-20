@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import colors from "styles/colors";
 import Logo from "components/_ui/Logo";
-import spooch from "images/Doge.png"
+import spooch from "images/Doge.webp"
 
 const FooterContainer = styled("div")`
     padding-top: 3.75em;
